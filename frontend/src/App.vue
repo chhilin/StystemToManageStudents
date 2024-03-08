@@ -1,47 +1,29 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+  <div class="">
+    <div class=" bg-red-800">
+      helo
     </div>
-  </header>
+    <nav>
+      <div>
+        <!-- <img src="/src/assets/icon/duc-logo.png" alt="" /> -->
+      </div>
+      <div>
+        <h2 class="mb-4 text-red-900 font-extrabold md:text-4xl">មហាវិទ្យាល័យបច្ចេលវិទ្យាឌីជីថល​ - Faculty of Digital Technology</h2>
+        <h1>ដេប៉ាតឺម៉ង់បវត្តិឌីជីផថ - Departement of Digital Transformation</h1>
+      </div>
+    </nav>
 
-  <main>
-    <TheWelcome />
-  </main>
+    <Home></Home>
+  </div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-}
+<script setup>
+import Home from "/src/pages/Home.vue";
+const components = {
+  Home,
+};
+</script>
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>
