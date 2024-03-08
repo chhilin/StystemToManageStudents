@@ -1,6 +1,5 @@
 
 <template>
-  <div class=" container ">
     <div class=" bg-red-800 text-red">
       helo
     </div>
@@ -12,8 +11,10 @@
       </div> -->
     </nav>
 
-    <Home></Home>
-  </div>
+  <main>
+    <div class="text-white font-bold bg-blue-500 text-center">Hello world </div>
+    <TheWelcome />
+  </main>
 </template>
 
 <script setup>
