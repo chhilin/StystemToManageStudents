@@ -9,4 +9,8 @@ class Comment extends Model
 {
     use HasFactory;
     protected $fillable = ['comment',];
+    public function students(): HasOne
+    {
+        return $this->hasOne(Media::class, 'id');
+    }
 }

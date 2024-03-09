@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\student\StudentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,16 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::redirect("/", "/like_share_comment");
+
+Route::prefix('like_share_comment')->group(function () {
+    Route::get('/', [StudentController::class, 'index'])->name('student');
 });
-Route::prefix('student')->group(function () use ($controller_path) {
-    Route::get('/', $controller_path . '\student\StudentController@index')->name('student');
-    Route::get('/create', $controller_path . '\student\StudentController@create')->name('student');
-    Route::post('/store', $controller_path . '\student\StudentController@store')->name('student.store');
-    Route::get('/edit/{id}', $controller_path . '\student\StudentController@edit')->name('student');
-    Route::put('/edit/{id}', $controller_path . '\student\StudentController@update')->name('student.update');
-    Route::delete('/delete/{id}', $controller_path . '\student\StudentController@destroy')->name('student.destroy');
-    Route::get('/search', $controller_path . '\student\StudentController@search')->name('student.search');
-    Route::get('/profile', $controller_path . '\student\StudentController@profile');
-});
+
