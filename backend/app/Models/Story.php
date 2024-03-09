@@ -9,4 +9,8 @@ class Story extends Model
 {
     use HasFactory;
     protected $fillable = ['story_title',];
+    public function students(): HasOne
+    {
+        return $this->hasOne(Media::class, 'id', 'stories_id');
+    }
 }
